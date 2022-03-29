@@ -1,6 +1,5 @@
-# wt-lab-assigment
-web technology assigmnet
 
-Assignment 3 :
+# Assignment
+## [Assignment 3](https://github.com/chetan-pun/wt-lab-assigment/tree/main/assignment/assigment3)
 
-submitted date : 
+ 
