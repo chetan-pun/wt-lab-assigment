@@ -1,5 +1,5 @@
 
 # Lab Work
-## [Lab 1](https://github.com/chetan-pun/wt-lab-assigment/tree/main/lab/lab1)
+## [Lab 2](https://github.com/chetan-pun/wt-lab-assigment/tree/main/lab/lab2)
 
  
