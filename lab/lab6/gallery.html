@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery</title>
+    <style>
+        .common{
+            border-radius: 6px;
+            border: 2px solid #000;
+        }
+        .container{
+            height: 600px;
+            width: 70%;
+            background-color: rgb(224, 224, 224);
+            position: absolute;
+            margin: auto;
+            bottom: 0;
+            right: 0;
+            left: 0;
+            top: 0;
+        }
+
+        img{
+            width: 270px;
+            height: 200px;
+            margin: 2em;
+            box-shadow: 0px 2px 10px rgba(50, 50, 52, 0.7);
+            background-color: #000;
+        }
+
+        img:hover{
+            transform: scale(1.5);
+            z-index: 5;
+        }
+    </style>
+</head>
+<body>
+    <div class="container common">
+        <img src="./images/image1.jpg" alt="" class="common">
+        <img src="./images/image2.jpg" alt="" class="common">
+        <img src="./images/image3.jpg" alt="" class="common">
+        <img src="./images/image1.jpg" alt="" class="common">
+        <img src="./images/image2.jpg" alt="" class="common">
+        <img src="./images/image3.jpg" alt="" class="common">
+    </div>
+    <script>
+        const image = document.querySelectorAll(".img");
+        const gallary = document.getElementsByClassName("container");
+
+        for (im  of image) {
+            im.addEventListener("click",function(event)
+            {
+                event.target.style.visibility = "hidden";
+                console.log("clicked");
+            })
+        }
+    </script>
+</body>
+</html>
