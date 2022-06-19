@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Drag and Drop</title>
+    <style>
+        .box{
+            position: absolute;
+            display: inline-block;
+            background-color: rgb(215, 215, 215);
+            padding: 1em 2em;
+            border: 1px solid #000;
+            border-radius: 6px;
+            height: 20px;
+            box-shadow: 0px 2px 10px rgba(92, 92, 92, 0.7);
+            font-size: 18px;
+        }
+        .bg{
+            position: relative;
+        }
+        #box2{
+            left: 150px;
+        }
+        #box3{
+            left: 300px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="bg">
+    <div id="box1" class="box" draggable="true">Ringer</div>
+    <div id="box2" class="box" draggable="true">Ringer</div>
+    <div id="box3" class="box" draggable="true">Rose</div>
+    <div></div>
+</div>
+
+
+    <script>
+        let ring1 =document.getElementById("box1");
+        let ring2 =document.getElementById("box2");
+        let rose =document.getElementById("box3");
+        
+        function drag1(event) {
+            ring1.style.transform = `translate(${event.clientX - 20}px, ${event.clientY - 20}px)`;
+        }
+        ring1.addEventListener("mousedown", () =>
+            document.addEventListener("mousemove", drag1)
+        );
+        ring1.addEventListener("mouseup", () =>
+            document.removeEventListener("mousemove", drag1)
+        );
+
+        function drag2(event) {
+            ring2.style.transform = `translate(${event.clientX - 170}px, ${event.clientY - 20}px)`;
+        }
+        ring2.addEventListener("mousedown", () =>
+            document.addEventListener("mousemove", drag2)
+        );
+        ring2.addEventListener("mouseup", () =>
+            document.removeEventListener("mousemove", drag2)
+        );
+
+        function drag3(event) {
+            rose.style.transform = `translate(${event.clientX - 320}px, ${event.clientY - 20}px)`;
+        }
+        rose.addEventListener("mousedown", () =>
+            document.addEventListener("mousemove", drag3)
+        );
+        rose.addEventListener("mouseup", () =>
+            document.removeEventListener("mousemove", drag3)
+        );
+
+
+
+        const spanElement =document.querySelectorAll("span");
+        for(el of spanElement)
+        {
+            el.addEventListener("mousedown",drag)
+        }
+        function drag(event)
+        {
+            element = 
+            document.target.addEventListener("mousemove", move);
+            document.target.addEventListener("mouseup", droper  )
+        }
+
+        function move(event)
+        {
+            event.target.style.left = event.clientX + "px";
+            event.target.style.top = event.clientY + "px";
+        }
+        function droper(event)
+        {
+            document.removeEventListener("mousemove", move ,true);
+            document.removeEventListener("mouseup", droper ,true);
+        }
+    </script>
+</body>
+</html>
